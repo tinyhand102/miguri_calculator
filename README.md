@@ -1,4 +1,4 @@
 # Miguri Calculator
 
-###Reference
+### Reference
 https://github.com/mamahiro3581/mamahiro
