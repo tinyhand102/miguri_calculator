@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ミーグリ計算機</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+
+        #calculator {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+
+<div id="calculator">
+    <h2>ミーグリ計算機</h2>
+    <label for="amount">金額（円）：</label>
+    <input type="number" id="amount" min="0" step="1" placeholder="金額を入力">
+    <button onclick="calculate()">計算</button>
+    <p id="result"></p>
+</div>
+
+<script>
+    function calculate() {
+        var amountInput = document.getElementById('amount');
+        var resultParagraph = document.getElementById('result');
+
+        var amount = parseInt(amountInput.value, 10);
+        var baseAmount = 1100;
+
+        if (isNaN(amount)) {
+            resultParagraph.innerText = '有効な金額を入力してください。';
+        } else {
+            var miiGiriCount = Math.floor(amount / baseAmount);
+            resultParagraph.innerText = 'ミーグリ ' + miiGiriCount + '枚\n' +miiGiriCount*10+'秒';
+        }
+    }
+</script>
+
+</body>
+</html>
