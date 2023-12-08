@@ -24,8 +24,8 @@
     <div id="calculator">
         <h2>ミーグリ計算機</h2>
         <label for="amount">金額（円）：</label>
-        <input type="number" id="amount" min="0" step="1" placeholder="金額を入力">
-        <button onclick="calculate()">計算</button>
+        <input type="number" id="amount" min="0" step="100" placeholder="金額を入力">
+        <button onclick="calculate()" id="cal">計算</button>
         <p id="result"></p>
     </div>
 
@@ -52,6 +52,13 @@
                 }
             }
         }
+        var amountInput = document.getElementById('amount');
+        amountInput.addEventListener("keypress", function(event) {
+            if (event.key === "Enter") {
+              event.preventDefault();
+              document.getElementById("cal").click();
+            }
+          });
     </script>
 
 </body>
